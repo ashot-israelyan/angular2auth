@@ -14,7 +14,7 @@ mongoose.Promise = global.Promise;
 
 // On Connection
 mongoose.connection.on('connected', () => {
-  console.log('Connected to database ' + config.database);
+  console.log('Connected to database Auth Admin');
 });
 
 mongoose.connection.on('error', (err) => {
@@ -26,7 +26,7 @@ const app = express();
 const users = require('./routes/users');
 
 // Port Number
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // CORS Middleware
 app.use(cors());
